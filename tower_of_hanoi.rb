@@ -1,17 +1,15 @@
 def intro_menu
-	puts "\n"
 	puts " _____________________________________ "
 	puts "|~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|"
 	puts "|     Welcome to Tower of Hanoi!      |"
 	puts "|~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|"
 	puts "| Please choose one of the following: |"
-	puts "|                                     |\n"
-	puts "|(1) Instructions                     |"
+	puts "|                                     |"
+	puts "|(1) How to play?                     |"
 	puts "|(2) Start new Game!                  |"
 	puts "|                                     |"
 	puts "|        *Enter only 1 or 2*          |"
 	puts "|_____________________________________|"
-	puts "\n"
 end
 
 def game_driver
@@ -29,13 +27,31 @@ def game_driver
 			correct_input = true
 		else
 			puts "Please input ONLY the numbers 1 or 2"
-			correct_input = false
 		end
 	end 
 end
 
 def game_instructions
-	puts "instructions" #testing purposes
+	puts " ______________________________________________________________ "
+	puts "| Goal: To move all the disks from the leftmost peg to another |"
+	puts "|       peg while adhering to the following 3 rules.           |"
+	puts "|                                                              |"
+	puts "| (1) You may only move one disk at a time.                    |"
+	puts "| (2) A larger disk may not be placed on top of a smaller one. |"
+	puts "| (3) All disks, except the one being moved, must be on a peg. |"
+	puts "|                                                              |"
+	puts "|          Press 'Q' to return to the Home screen              |"
+	puts "|______________________________________________________________|"
+
+
+	while true
+		user_return = gets.chomp
+
+		break if user_return.upcase == 'Q'
+	end
+
+	game_driver
+
 end
 
 def start_game
